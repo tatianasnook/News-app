@@ -10,7 +10,7 @@ export const HomeScreen = ({navigation}) => {
   const fetchNews = () => {
     setIsLoading(true);
     const getNews = async () => {
-      const response = await fetch("https://newsdata.io/api/1/news?apikey=pub_3342918e36758f42d7cda1b36e8693c19f9c4&country=us&language=en&category=business,entertainment,health,politics,science");
+      const response = await fetch("https://newsdata.io/api/1/news?apikey=pub_3342918e36758f42d7cda1b36e8693c19f9c4&country=us&language=en&category=business,health,politics,science,technology");
       const data = await response.json()
       setItems(data.results)
     }

@@ -1,14 +1,19 @@
 import { HomeScreen } from './screens/Home';
 import React from 'react';
-import { View } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
 import { FullPostScreen } from './screens/FullPost';
-import { Navigation } from 'react-native-navigation';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { AppNavigation } from './screens/AppNavigation';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   
-  return <AppNavigation/>
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} options={{title: "News"}}/>
+        <Stack.Screen name="FullPost" component={FullPostScreen} options={{title: "Article"}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
